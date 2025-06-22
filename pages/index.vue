@@ -1,7 +1,24 @@
 <template>
-  <div></div>
+  <div
+    class="text-black leading-relaxed [text-shadow:0_2px_6px_rgba(0,0,0,0.1)]"
+  >
+    <section>
+      <Hero />
+    </section>
+    <section>
+      <Projects />
+    </section>
+    <section>
+      <Skills />
+    </section>
+  </div>
 </template>
 
-<script lang="ts" setup></script>
+<script setup>
+const { t } = useI18n();
+const locale = t.locale;
 
-<style></style>
+const switchLocale = (event) => {
+  locale.value = event.target.value;
+};
+</script>

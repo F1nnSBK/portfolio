@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <slot />
-  </div>
+  <Nav />
+  <main>
+    <div>
+      <slot />
+    </div>
+  </main>
+  <Footer />
 </template>
 
 <script lang="ts" setup></script>

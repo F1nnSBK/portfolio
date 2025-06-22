@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "title": "Finn Hertsch",
+    "subtitle": "DHBW Student · Data Science & KI · Quant Enthusiast"
+  },
+  "about": {
+    "title": "Über mich",
+    "text": "Ich bin dualer Student ..."
+  },
+  "projects": {
+    "title": "Projekte",
+    "view_project": "Zum Projekt"
+  },
+  "footer": {
+    "title": "Kontakt",
+    "description": "Danke für dein Interesse. Schreib mir gern eine Nachricht oder schau dir meine Projekte an.",
+    "links": "Links",
+    "email": "f.hertsch[at]gmx.de",
+    "legal": "Impressum",
+    "copyright": "Alle Rechte vorbehalten."
+  }
+
+}

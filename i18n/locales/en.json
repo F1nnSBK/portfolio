@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Your Name",
+    "subtitle": "DHBW Student · Data Science & AI · Quant Enthusiast"
+  },
+  "about": {
+    "title": "About Me",
+    "text": "I’m a dual student at Schwäbisch Media ..."
+  },
+  "projects": {
+    "title": "Projects",
+    "view_project": "Show Project"
+  },
+  "footer": {
+    "title": "Contact",
+    "description": "Thanks for your interest. Feel free to drop me a message or check out my projects.",
+    "links": "Links",
+    "email": "f.hertsch[at]gmx.de",
+    "legal": "Legal Notice",
+    "copyright": "All rights reserved."
+  }
+}

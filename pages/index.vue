@@ -11,13 +11,15 @@
     <section>
       <Skills />
     </section>
+    <section>
+      <NoteDir />
+    </section>
   </div>
 </template>
 
 <script setup>
 const { t } = useI18n();
 const locale = t.locale;
-
 const switchLocale = (event) => {
   locale.value = event.target.value;
 };

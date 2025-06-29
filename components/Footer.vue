@@ -26,7 +26,7 @@
           </li>
           <li>
             <a
-              href="https://github.com/deinname"
+              href="https://github.com/F1nnSBK"
               target="_blank"
               class="hover:underline"
               >GitHub</a

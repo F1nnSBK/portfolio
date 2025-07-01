@@ -27,6 +27,9 @@
     <section>
       <NoteDir />
     </section>
+    <section>
+      <DNA />
+    </section>
   </div>
 </template>
 

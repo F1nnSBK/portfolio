@@ -1,5 +1,5 @@
 <template>
-  <OU />
+  <DNA />
 </template>
 
 <script lang="ts" setup></script>

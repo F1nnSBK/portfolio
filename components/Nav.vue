@@ -49,7 +49,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 
 const { t } = useI18n();
 
-const showNav = ref(false);
+const showNav = ref(true);
 
 const handleScroll = () => {
   showNav.value = window.scrollY > 50;

@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     '@nuxt/scripts', 
     '@nuxt/image', 
     '@nuxtjs/i18n',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@tresjs/nuxt'
   ],
   content: {
     build: {

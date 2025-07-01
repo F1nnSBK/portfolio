@@ -9,6 +9,19 @@
       <Projects />
     </section>
     <section>
+      <div class="border-8 border-black">
+        <OU />
+      </div>
+      <span class="text-sm"
+        ><a
+          class="underline"
+          href="/notebooks/ornstein_uhlenbeck.ipynb"
+          download
+          >Ornstein-Uhlenbeck Prozess</a
+        ></span
+      >
+    </section>
+    <section>
       <Skills />
     </section>
     <section>

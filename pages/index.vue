@@ -30,6 +30,12 @@
     <section>
       <DNA />
     </section>
+    <section>
+      <About />
+    </section>
+    <section>
+      <Contact />
+    </section>
   </div>
 </template>
 

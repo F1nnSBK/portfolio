@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-20 max-w-5xl mx-auto">
+  <section id="skills" class="mt-20 max-w-5xl mx-auto">
     <h2 class="text-3xl uppercase border-b-2 border-black pb-2 mb-6">Skills</h2>
 
     <div
@@ -8,9 +8,9 @@
       <div
         v-for="category in skillCategories"
         :key="category.title"
-        class="border border-black p-4"
+        class="border-2 border-black p-6 bg-white text-black flex flex-col justify-between font-mono"
       >
-        <h3 class="text-xl uppercase mb-2 border-b border-black pb-1">
+        <h3 class="text-xl font-bold uppercase mb-2">
           {{ category.title }}
         </h3>
         <ul class="list-square pl-4">

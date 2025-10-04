@@ -12,6 +12,11 @@
         <p class="leading-relaxed">
           {{ $t("footer.description") }}
         </p>
+        <p>
+          <a class="text-blue-600" href="mailto:f.hertsch@gmx.de"
+            >📧 {{ cleanEmail }}</a
+          >
+        </p>
       </div>
 
       <div>
@@ -19,11 +24,6 @@
           {{ $t("footer.links") }}
         </p>
         <ul class="space-y-1">
-          <li>
-            <a href="mailto:dein.email@example.com" class="hover:underline"
-              >📧 {{ cleanEmail }}</a
-            >
-          </li>
           <li>
             <a
               href="https://github.com/F1nnSBK"

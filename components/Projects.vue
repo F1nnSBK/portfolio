@@ -4,10 +4,18 @@
       {{ $t("projects.title") }}
     </h2>
 
-    <div class="grid md:grid-cols-2 gap-6">
+    <div v-if="pending">
+      <p>Lade Projekte...</p>
+    </div>
+
+    <div v-else-if="error">
+      <p>Fehler beim Laden der Projekte: {{ error.message }}</p>
+    </div>
+
+    <div v-else-if="projects" class="grid md:grid-cols-2 gap-6">
       <div
         v-for="project in projects"
-        :key="project.title"
+        :key="project.id"
         class="border-2 border-black p-6 bg-white text-black flex flex-col justify-between font-mono"
       >
         <div>
@@ -19,18 +27,18 @@
             {{ project.short_description }}
           </p>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 flex justify-between items-center">
           <a
             :href="project.link"
             class="underline uppercase text-sm"
             target="_blank"
+            rel="noopener noreferrer"
           >
             {{ $t("projects.view_project") }}
           </a>
-        </div>
-        <div>
-          Schwierigkeit:
-          {{ project.difficulty }}
+          <div class="text-sm font-bold">
+            Difficulty: {{ project.difficulty }}/10
+          </div>
         </div>
       </div>
     </div>
@@ -38,31 +46,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import type { Project } from "~/types/database";
 
-const projects = ref([
-  {
-    id: 1,
-    title: "Artikel Empfehlungssystem",
-    stack: "Python, PyTorch, FastAPI, VertexAI",
-    short_description:
-      "Hybrides Empfehlungssystem für Nachrichteninhalte – kombiniert Content-Filtering und User-Verhalten.",
-    detailed_description: "",
-    title_image_url: "",
-    difficulty: 8,
-    related_to: "",
-    link: "#",
-  },
-]);
-
-function createProjectLink(title: string) {
-  return title.toLowerCase().replace(/\s+/g, "-");
-}
-
-onMounted(() => {
-  projects.value.forEach((project) => {
-    project.link = "/projects/" + createProjectLink(project.title);
-    console.log("link:", project.link);
-  });
-});
+const {
+  data: projects,
+  pending,
+  error,
+} = await useFetch<Project[]>("/api/projects");
 </script>

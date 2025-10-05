@@ -8,6 +8,7 @@ export type Project = {
   difficulty: number
   related_to: string
   link: string
+  github: string
   created_at: string
   updated_at: string
 }

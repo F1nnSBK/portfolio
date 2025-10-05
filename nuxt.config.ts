@@ -15,9 +15,9 @@ export default defineNuxtConfig({
   ],
   supabase: {
     url: process.env.SUPABASE_URL,
-    key: process.env.SUPABASE_ANON_KEY, // Dies ist der public/anon key
-    serviceKey: process.env.SUPABASE_KEY, // Dies ist der private service_role key
-    redirect: false // Optional: Weiterleitungs-Logik deaktivieren/anpassen
+    key: process.env.SUPABASE_ANON_KEY,
+    serviceKey: process.env.SUPABASE_KEY,
+    redirect: false
   },
   content: {
     build: {

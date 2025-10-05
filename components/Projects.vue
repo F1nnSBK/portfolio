@@ -12,6 +12,10 @@
       <p>Fehler beim Laden der Projekte: {{ error.message }}</p>
     </div>
 
+    <div v-else-if="projects?.length == 0">
+      <p>Keine Projekte gefunden.</p>
+    </div>
+
     <div v-else-if="projects" class="grid md:grid-cols-2 gap-6">
       <div
         v-for="project in projects"

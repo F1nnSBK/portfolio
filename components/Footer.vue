@@ -45,6 +45,11 @@
               $t("footer.legal")
             }}</NuxtLink>
           </li>
+          <li>
+            <NuxtLink to="/datenschutz" class="hover:underline">{{
+              $t("footer.data")
+            }}</NuxtLink>
+          </li>
         </ul>
       </div>
     </div>

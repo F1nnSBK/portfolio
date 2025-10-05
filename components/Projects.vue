@@ -16,7 +16,7 @@
             <strong>Stack:</strong> {{ project.stack }}
           </p>
           <p class="text-sm">
-            {{ project.description }}
+            {{ project.short_description }}
           </p>
         </div>
         <div class="mt-4">
@@ -24,10 +24,13 @@
             :href="project.link"
             class="underline uppercase text-sm"
             target="_blank"
-            rel="noopener"
           >
             {{ $t("projects.view_project") }}
           </a>
+        </div>
+        <div>
+          Schwierigkeit:
+          {{ project.difficulty }}
         </div>
       </div>
     </div>
@@ -35,20 +38,31 @@
 </template>
 
 <script setup lang="ts">
-const projects = [
+import { ref, onMounted } from "vue";
+
+const projects = ref([
   {
-    title: "Artikel-Empfehlungssystem",
-    stack: "Python, scikit-learn, Flask, Redis",
-    description:
+    id: 1,
+    title: "Artikel Empfehlungssystem",
+    stack: "Python, PyTorch, FastAPI, VertexAI",
+    short_description:
       "Hybrides Empfehlungssystem für Nachrichteninhalte – kombiniert Content-Filtering und User-Verhalten.",
-    link: "https://github.com/deinname/artikel-empfehlung",
-  },
-  {
-    title: "Monte-Carlo Portfolio Simulation",
-    stack: "Python, NumPy, Matplotlib",
-    description:
-      "Risikosimulation für Finanzportfolios – Fokus auf Value-at-Risk und Expected Shortfall.",
+    detailed_description: "",
+    title_image_url: "",
+    difficulty: 8,
+    related_to: "",
     link: "#",
   },
-];
+]);
+
+function createProjectLink(title: string) {
+  return title.toLowerCase().replace(/\s+/g, "-");
+}
+
+onMounted(() => {
+  projects.value.forEach((project) => {
+    project.link = "/projects/" + createProjectLink(project.title);
+    console.log("link:", project.link);
+  });
+});
 </script>

@@ -5,13 +5,20 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   modules: [
-    '@nuxt/icon', 
-    '@nuxt/scripts', 
-    '@nuxt/image', 
+    '@nuxt/icon',
+    '@nuxt/scripts',
+    '@nuxt/image',
     '@nuxtjs/i18n',
     '@nuxt/content',
-    '@tresjs/nuxt'
+    '@tresjs/nuxt',
+    '@nuxtjs/supabase'
   ],
+  supabase: {
+    url: process.env.SUPABASE_URL,
+    key: process.env.SUPABASE_ANON_KEY, // Dies ist der public/anon key
+    serviceKey: process.env.SUPABASE_KEY, // Dies ist der private service_role key
+    redirect: false // Optional: Weiterleitungs-Logik deaktivieren/anpassen
+  },
   content: {
     build: {
       markdown: {

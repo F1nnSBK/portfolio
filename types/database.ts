@@ -9,6 +9,7 @@ export type Project = {
   related_to: string
   link: string
   github: string
+  pdf: string
   created_at: string
   updated_at: string
 }

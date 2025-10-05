@@ -33,9 +33,9 @@
         </div>
         <div class="mt-4 flex justify-between items-center">
           <a
-            :href="project.link"
+            :href="project.link + '?id=' + project.id"
             class="underline uppercase text-sm"
-            target="_blank"
+            target="_self"
             rel="noopener noreferrer"
           >
             {{ $t("projects.view_project") }}

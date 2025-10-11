@@ -10,31 +10,31 @@
     <ul class="hidden md:flex gap-6 text-lg">
       <li>
         <NuxtLink
-          to="/#about"
+          to="/about"
           class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
         >
           Über mich
         </NuxtLink>
       </li>
-      <li>
+      <!-- <li>
         <NuxtLink
           to="/#projects"
           class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
         >
           Projekte
         </NuxtLink>
-      </li>
-      <li>
+      </li> -->
+      <!-- <li>
         <NuxtLink
           to="/#skills"
           class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
         >
           Skills
         </NuxtLink>
-      </li>
+      </li> -->
       <li>
         <NuxtLink
-          to="/#contact"
+          to="/contact"
           class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
         >
           Kontakt
@@ -95,7 +95,7 @@
             Über mich
           </NuxtLink>
         </li>
-        <li>
+        <!-- <li>
           <NuxtLink
             to="/#projects"
             class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
@@ -112,7 +112,7 @@
           >
             Skills
           </NuxtLink>
-        </li>
+        </li> -->
         <li>
           <NuxtLink
             to="/#contact"

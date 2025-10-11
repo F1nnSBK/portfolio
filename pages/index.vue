@@ -3,9 +3,6 @@
     class="text-black leading-relaxed [text-shadow:0_2px_6px_rgba(0,0,0,0.1)]"
   >
     <section>
-      <Hero />
-    </section>
-    <section>
       <Projects />
     </section>
     <section>
@@ -27,10 +24,6 @@
 
     <section>
       <DNA />
-    </section>
-
-    <section>
-      <Skills />
     </section>
   </div>
 </template>

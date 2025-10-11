@@ -1,5 +1,5 @@
 <template>
-  <section id="skills" class="mt-20 max-w-5xl mx-auto">
+  <section id="skills" class="my-20 max-w-5xl mx-auto">
     <h2 class="text-3xl uppercase border-b-2 border-black pb-2 mb-6">Skills</h2>
 
     <div

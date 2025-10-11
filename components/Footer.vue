@@ -34,7 +34,7 @@
           </li>
           <li>
             <a
-              href="https://linkedin.com/in/deinname"
+              href="https://www.linkedin.com/in/finn-hrts/"
               target="_blank"
               class="hover:underline"
               >LinkedIn</a

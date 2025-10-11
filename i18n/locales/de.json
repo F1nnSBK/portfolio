@@ -3,9 +3,62 @@
     "title": "Finn Hertsch",
     "subtitle": "DHBW Student · Data Science & KI"
   },
-  "about": {
+  "resume": {
     "title": "Über mich",
-    "text": "Ich bin dualer Student ..."
+    "text": "Ich bin dualer Student ...",
+    "experience": {
+      "title": "Arbeit",
+      "items": [
+        {
+          "period": "Okt 2024 – Heute",
+          "role": "Dualer Student Data Science & Ki",
+          "company": "Schwäbischer Verlag GmbH & Co. KG Drexler, Gessler",
+          "tasks": [
+            "Erstellung von Business Intelligence Berichten mit Microsoft PowerBi",
+            "Planung und Konzeption eines prototypischen Empfehlungssystem für Online Nachrichtenartikel",
+            "Unterstützung bei der Entwicklung zahlreicher Datenpipelines"
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Bildung",
+      "items": [
+        {
+          "period": "Okt 2024 – Sept 2027",
+          "degree": "Bachelor of Science in Data Science & Ki",
+          "institution": "DHBW Ravensburg"
+        },
+        {
+          "period": "Sept 21 - Jul 2024",
+          "degree": "Allgemeine Hochschulreife",
+          "institution": "Edith-Stein-Schule Ravensburg Biotechnologische Richtung"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Technologie",
+      "categories": [
+        {
+          "title": "Frontend",
+          "items": ["JavaScript", "TypeScript", "Vue.js", "Nuxt.js", "Tailwind CSS"]
+        },
+        {
+          "title": "Backend & Datenbanken",
+          "items": [
+            "FastAPI / Flask",
+            "Spring Boot",
+            ".NET / Blazor",
+            "SQL",
+            "BigQuery"
+          ]
+        },
+        {
+          "title": "Tools & Methoden",
+          "items": ["Git", "Vite", "npm/yarn", "Figma", "Scrum", "REST APIs"]
+        }
+      ]
+    }
   },
   "projects": {
     "title": "Projekte",
@@ -22,7 +75,5 @@
   },
   "contact": {
     "title": "Kontakt"
-    
   }
-
 }

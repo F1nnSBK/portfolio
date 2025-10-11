@@ -22,16 +22,15 @@
       >
     </section>
     <section>
-      <Skills />
+      <About />
     </section>
-    <section>
-      <NoteDir />
-    </section>
+
     <section>
       <DNA />
     </section>
+
     <section>
-      <About />
+      <Skills />
     </section>
   </div>
 </template>

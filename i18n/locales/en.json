@@ -7,6 +7,10 @@
     "title": "About Me",
     "text": "I’m a dual student at Schwäbisch Media ..."
   },
+  "blog": {
+    "title": "Blog",
+    "teaser": "Here you can find my thoughts on current topics in the fields of Data Science, AI and Software Development."
+  },
   "projects": {
     "title": "Projects",
     "view_project": "Show Project"

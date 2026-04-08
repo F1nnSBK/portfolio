@@ -25,6 +25,9 @@
     <section>
       <DNA />
     </section>
+    <section>
+      <Blog />
+    </section>
   </div>
 </template>
 

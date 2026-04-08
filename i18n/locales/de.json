@@ -60,6 +60,10 @@
       ]
     }
   },
+  "blog": {
+    "title": "Blog",
+    "teaser": "Hier findest du meine Gedanken zu aktuellen Themen in den Bereichen Data Science, KI und Softwareentwicklung."
+  },
   "projects": {
     "title": "Projekte",
     "view_project": "Zum Projekt"

@@ -80,7 +80,6 @@
 </template>
 
 <script lang="ts" setup>
-// Definiere die Typen für deine Daten für Typsicherheit
 interface TimelineItem {
   period: string;
   role?: string;
@@ -111,7 +110,7 @@ const experience: TimelineItem[] = [
 const education: TimelineItem[] = [
   {
     period: "Okt 2024 – Sept 2027",
-    degree: "Bachelor of Science in Data Science & Ki",
+    degree: "B.Sc. in Data Science & Ki",
     institution: "DHBW Ravensburg",
   },
   {

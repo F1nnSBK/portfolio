@@ -1,7 +1,6 @@
 import { serverSupabaseClient } from '#supabase/server'
 
 export default defineEventHandler(async (event) => {
-  // Das Modul stellt den Client automatisch bereit
   const client = await serverSupabaseClient(event)
 
   const { data, error } = await client

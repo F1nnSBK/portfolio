@@ -11,13 +11,13 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/content',
     '@tresjs/nuxt',
-    '@nuxtjs/supabase'
+    '@nuxtjs/supabase',
   ],
-  supabase: {
-    url: process.env.SUPABASE_URL,
-    key: process.env.SUPABASE_ANON_KEY,
-    serviceKey: process.env.SUPABASE_KEY,
-    redirect: false
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY,
+    },
   },
   content: {
     build: {
@@ -37,14 +37,19 @@ export default defineNuxtConfig({
           }
         },
         highlight: {
-          // Theme used in all color schemes.
-          theme: 'github-light',
-          // OR
+          theme: 'github-dark',
         }
       }
     }
   },
-
+  supabase: {
+    redirectOptions: {
+      login: '/login',
+      callback: '/confirm',
+      exclude: ['/*'],
+    },
+    types: '~/types/database.types.ts'
+  },
   css: [
     '~/assets/css/main.css',
     'katex/dist/katex.min.css'

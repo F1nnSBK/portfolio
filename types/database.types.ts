@@ -54,6 +54,7 @@ export type Database = {
           difficulty: number
           github: string
           id: number
+          images: string[]
           link: string
           pdf: string
           related_to: string
@@ -69,6 +70,7 @@ export type Database = {
           difficulty: number
           github: string
           id?: never
+          images?: string[]
           link: string
           pdf: string
           related_to: string
@@ -84,6 +86,7 @@ export type Database = {
           difficulty?: number
           github?: string
           id?: never
+          images?: string[]
           link?: string
           pdf?: string
           related_to?: string

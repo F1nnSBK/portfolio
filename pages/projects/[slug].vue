@@ -24,14 +24,14 @@
             </p>
           </div>
           <div class="flex items-center gap-4 flex-wrap pt-4">
-            
+            <a
               v-if="project.github"
               :href="project.github"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-block border-2 border-black bg-white text-black font-bold uppercase py-2 px-5 font-mono transition-all duration-200 hover:bg-black hover:text-white"
             >GitHub</a>
-            
+            <a
               v-if="project.pdf"
               :href="project.pdf"
               target="_blank"

@@ -25,7 +25,7 @@
     <section>
       <DNA />
     </section>
-    <section>
+    <section class="mt-10">
       <Blog />
     </section>
   </div>

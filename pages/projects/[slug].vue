@@ -53,14 +53,14 @@
           <!-- Weitere Bilder als Grid -->
           <div
             v-if="project.images.length > 1"
-            class="grid grid-cols-2 gap-2"
+            class="grid grid-cols-1 gap-2"
           >
             <img
               v-for="(img, i) in project.images.slice(1)"
               :key="i"
               :src="img"
               :alt="`${project.title} - Bild ${i + 2}`"
-              class="w-full h-40 object-cover"
+              class="w-full h-50 object-cover"
               referrerpolicy="no-referrer"
             />
           </div>

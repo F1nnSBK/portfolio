@@ -41,7 +41,7 @@
             {{ $t("projects.view_project") }}
           </a>
           <div class="text-sm font-bold">
-            Difficulty: {{ project.difficulty }}/10
+            Difficulty: {{ project.difficulty }}/5
           </div>
         </div>
       </div>

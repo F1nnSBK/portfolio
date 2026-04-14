@@ -21,12 +21,19 @@
           </div>
           <div class="flex items-center gap-4 flex-wrap pt-4">
             <a
-              v-if="project.github"
+              v-if="project.github && eval_github_links(project.github)"
               :href="project.github"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-block border-2 border-black bg-white text-black font-bold uppercase py-2 px-5 font-mono transition-all duration-200 hover:bg-black hover:text-white"
             >GitHub</a>
+            <a
+              v-else-if="project.github"
+              :href="project.github"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block border-2 border-black bg-white text-black font-bold uppercase py-2 px-5 font-mono transition-all duration-200 hover:bg-black hover:text-white"
+            >Link</a>
             <a
               v-if="project.pdf"
               :href="project.pdf"
@@ -76,6 +83,7 @@ import type { Database } from '~/types/database.types'
 type Project = Database['public']['Tables']['projects']['Row']
 
 const route = useRoute()
+const ref_link_name = ref("GitHub")
 const { data: projects, pending, error } = await useFetch<Project[]>('/api/projects')
 
 const project = computed(() => {
@@ -87,6 +95,14 @@ const project = computed(() => {
 const detailedParagraphs = computed(() =>
   project.value?.detailed_description?.split('\n\n').filter(Boolean) ?? []
 )
+
+function eval_github_links(text: string): boolean {
+  const githubUrlPattern = /https?:\/\/github\.com\/[^\s]+/g
+  if (!githubUrlPattern.test(text)) {
+    return false
+  }
+  return true
+}
 
 const formattedDate = computed(() => {
   if (!project.value?.created_at) return ''

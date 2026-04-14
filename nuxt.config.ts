@@ -19,7 +19,7 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "A Notion-like note-taking app built with Nuxt 3 and Supabase.",
+            "A Portfolio showcasing my projects, skills, and experience as a dual student in Data Science and AI at DHBW. Explore my work, resume, and contact information.",
         },
       ],
     },

@@ -92,41 +92,23 @@
         class="absolute top-16 left-0 w-full bg-white border-b-2 border-black flex flex-col gap-4 px-4 py-6 md:hidden z-50"
       >
         <li>
-          <NuxtLink to="/#blog" class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
+          <NuxtLink to="/blog" class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
             @click="isOpen = false">
             Blog
           </NuxtLink>
         </li>
         <li>
           <NuxtLink
-            to="/#about"
+            to="/about"
             class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
             @click="isOpen = false"
           >
             Über mich
           </NuxtLink>
         </li>
-        <!-- <li>
-          <NuxtLink
-            to="/#projects"
-            class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
-            @click="isOpen = false"
-          >
-            Projekte
-          </NuxtLink>
-        </li>
         <li>
           <NuxtLink
-            to="/#skills"
-            class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
-            @click="isOpen = false"
-          >
-            Skills
-          </NuxtLink>
-        </li> -->
-        <li>
-          <NuxtLink
-            to="/#contact"
+            to="/contact"
             class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
             @click="isOpen = false"
           >

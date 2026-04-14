@@ -15,12 +15,8 @@
         <div class="font-mono space-y-4">
           <p class="font-bold">{{ project.short_description }}</p>
           <div class="space-y-3">
-            <p
-              v-for="(paragraph, i) in detailedParagraphs"
-              :key="i"
-              class="text-gray-800 leading-relaxed"
-            >
-              {{ paragraph }}
+            <p v-for="(paragraph, i) in detailedParagraphs" :key="i" class="text-gray-800 leading-relaxed">
+              <MathText :text="paragraph" />
             </p>
           </div>
           <div class="flex items-center gap-4 flex-wrap pt-4">

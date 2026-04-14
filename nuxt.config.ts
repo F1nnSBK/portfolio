@@ -4,6 +4,18 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+  app: {
+    head: {
+      link: [
+        { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" }
+      ],
+      title: 'Finn Hertsch - Portfolio',
+      meta: [
+        { name: 'description', content: 'A Notion-like note-taking app built with Nuxt 3 and Supabase.' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ],
+    },
+  },
   modules: [
     '@nuxt/icon',
     '@nuxt/scripts',

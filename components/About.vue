@@ -130,7 +130,7 @@ const skills: SkillCategory[] = [
     items: [
       "FastAPI / Flask",
       "Spring Boot",
-      ".NET / Blazor",
+      "Julia / Oxygen.jl",
       "SQL",
       "BigQuery",
     ],

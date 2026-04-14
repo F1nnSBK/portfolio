@@ -18,8 +18,7 @@
 
     <div v-else-if="projects" class="grid md:grid-cols-2 gap-6">
       <div
-        v-for="project in projects"
-        :key="project.id"
+        v-for="project in sortedProjects" :key="project.id"
         class="border-2 border-black p-6 bg-white text-black flex flex-col justify-between font-mono"
       >
         <div>
@@ -57,4 +56,14 @@ const {
   pending,
   error,
 } = await useFetch<Project[]>("/api/projects");
+
+const sortedProjects = computed(() => {
+  if (!projects.value) return [];
+
+  return [...projects.value].sort((a, b) => {
+    const diffA = a.difficulty ?? 0;
+    const diffB = b.difficulty ?? 0;
+    return diffB - diffA;
+  });
+});
 </script>

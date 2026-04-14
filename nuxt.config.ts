@@ -6,6 +6,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
+      viewport:
+        "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",
       link: [
         {
           rel: "stylesheet",
@@ -19,7 +21,6 @@ export default defineNuxtConfig({
           content:
             "A Notion-like note-taking app built with Nuxt 3 and Supabase.",
         },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
     },
   },

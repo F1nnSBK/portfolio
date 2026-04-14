@@ -21,14 +21,7 @@
           Über mich
         </NuxtLink>
       </li>
-      <!-- <li>
-        <NuxtLink
-          to="/#projects"
-          class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
-        >
-          Projekte
-        </NuxtLink>
-      </li> -->
+      
       <!-- <li>
         <NuxtLink
           to="/#skills"
@@ -43,6 +36,11 @@
           class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
         >
           Kontakt
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/wdb" class="hover:bg-white hover:text-black px-2 py-1 transition-colors bg-black text-white">
+          WissenDB
         </NuxtLink>
       </li>
     </ul>
@@ -113,6 +111,12 @@
             @click="isOpen = false"
           >
             Kontakt
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/wdb" class="hover:bg-white hover:text-black bg-black text-white px-2 py-1 transition-colors"
+            @click="isOpen = false">
+            WissenDB
           </NuxtLink>
         </li>
       </ul>

@@ -3,6 +3,12 @@
     "title": "Finn Hertsch",
     "subtitle": "DHBW Student · Data Science & KI"
   },
+  "search": {
+    "title": "WissenDB Suche",
+    "view_note": "Notiz lesen",
+    "placeholder": "Suche in meinen Notizen...",
+    "no_results": "Keine Ergebnisse gefunden."
+  },
   "resume": {
     "title": "Lebenslauf",
     "text": "Ich bin dualer Student ...",

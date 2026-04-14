@@ -1,36 +1,43 @@
-<!-- components/MathText.vue -->
 <template>
-  <span>
+  <div class="math-renderer">
     <template v-for="(segment, i) in segments" :key="i">
-      <!-- Block-Math: $$...$$ -->
-      <span v-if="segment.type === 'block'" class="block my-4 overflow-x-auto" v-html="segment.html" />
-      <!-- Inline-Math: $...$ -->
-      <span v-else-if="segment.type === 'inline'" v-html="segment.html" />
-      <!-- Normaler Text -->
-      <span v-else>{{ segment.text }}</span>
+      <div v-if="segment.type === 'block'"
+        class="my-6 p-4 border-y-2 border-black bg-gray-50 overflow-x-auto shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+        v-html="segment.html" />
+
+      <span v-else-if="segment.type === 'inline'" class="inline-math font-sans" v-html="segment.html" />
+
+      <span v-else class="prose-custom" v-html="segment.html" />
     </template>
-  </span>
+  </div>
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
 import katex from 'katex'
+import { marked } from 'marked'
 
 const props = defineProps<{ text: string }>()
 
 type Segment =
-  | { type: 'text'; text: string }
+  | { type: 'text'; html: string }
   | { type: 'inline'; html: string }
   | { type: 'block'; html: string }
 
 const segments = computed<Segment[]>(() => {
   const result: Segment[] = []
+  // Regex für $$...$$ oder $...$
   const regex = /(\$\$[\s\S]+?\$\$|\$[^$\n]+?\$)/g
   let lastIndex = 0
   let match: RegExpExecArray | null
 
   while ((match = regex.exec(props.text)) !== null) {
     if (match.index > lastIndex) {
-      result.push({ type: 'text', text: props.text.slice(lastIndex, match.index) })
+      const textPart = props.text.slice(lastIndex, match.index)
+      result.push({
+        type: 'text',
+        html: marked.parse(textPart) as string
+      })
     }
 
     const raw = match[0]
@@ -44,16 +51,58 @@ const segments = computed<Segment[]>(() => {
       })
       result.push({ type: isBlock ? 'block' : 'inline', html })
     } catch {
-      result.push({ type: 'text', text: raw })
+      result.push({ type: 'text', html: raw })
     }
 
     lastIndex = match.index + raw.length
   }
 
   if (lastIndex < props.text.length) {
-    result.push({ type: 'text', text: props.text.slice(lastIndex) })
+    result.push({
+      type: 'text',
+      html: marked.parse(props.text.slice(lastIndex)) as string
+    })
   }
 
   return result
 })
 </script>
+
+<style scoped>
+/* Standard CSS, um den Tailwind v4 @apply Fehler zu umgehen.
+   Das erzeugt exakt den gleichen Brutalist-Look! */
+
+:deep(.prose-custom) p {
+  margin-bottom: 1rem;
+  line-height: 1.625;
+}
+
+:deep(.prose-custom) strong {
+  background-color: #fef08a;
+  /* entspricht bg-yellow-200 */
+  padding: 0 0.25rem;
+  /* entspricht px-1 */
+  border: 1px solid black;
+}
+
+:deep(.prose-custom) ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+  border-left: 4px solid black;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+:deep(.prose-custom) h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+}
+</style>

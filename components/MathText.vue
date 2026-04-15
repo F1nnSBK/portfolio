@@ -7,7 +7,8 @@
 
       <span v-else-if="segment.type === 'inline'" class="inline-math font-sans" v-html="segment.html" />
 
-      <span v-else class="prose-custom" v-html="segment.html" />
+      <span v-else-if="segment.type === 'text-inline'" class="prose-custom" v-html="segment.html" />
+      <div v-else class="prose-custom" v-html="segment.html" />
     </template>
   </div>
 </template>
@@ -21,23 +22,33 @@ const props = defineProps<{ text: string }>()
 
 type Segment =
   | { type: 'text'; html: string }
+  | { type: 'text-inline'; html: string }
   | { type: 'inline'; html: string }
   | { type: 'block'; html: string }
 
+// Prüft ob echter Block-Markdown vorhanden ist (Überschriften, Listen, Code-Blöcke…)
+function hasBlockMarkdown(text: string): boolean {
+  return /^(#{1,6}\s|[-*+]\s|\d+\.\s|```|~~~|>|\|)/m.test(text)
+}
+
+function parseText(text: string): Segment {
+  if (hasBlockMarkdown(text)) {
+    return { type: 'text', html: marked.parse(text) as string }
+  }
+  // Einzelne Newlines → <br>, parseInline verhindert <p>-Wrapping
+  const withBreaks = text.replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>')
+  return { type: 'text-inline', html: marked.parseInline(withBreaks) as string }
+}
+
 const segments = computed<Segment[]>(() => {
   const result: Segment[] = []
-  // Regex für $$...$$ oder $...$
   const regex = /(\$\$[\s\S]+?\$\$|\$[^$\n]+?\$)/g
   let lastIndex = 0
   let match: RegExpExecArray | null
 
   while ((match = regex.exec(props.text)) !== null) {
     if (match.index > lastIndex) {
-      const textPart = props.text.slice(lastIndex, match.index)
-      result.push({
-        type: 'text',
-        html: marked.parse(textPart) as string
-      })
+      result.push(parseText(props.text.slice(lastIndex, match.index)))
     }
 
     const raw = match[0]
@@ -45,23 +56,17 @@ const segments = computed<Segment[]>(() => {
     const latex = isBlock ? raw.slice(2, -2).trim() : raw.slice(1, -1).trim()
 
     try {
-      const html = katex.renderToString(latex, {
-        displayMode: isBlock,
-        throwOnError: false,
-      })
+      const html = katex.renderToString(latex, { displayMode: isBlock, throwOnError: false })
       result.push({ type: isBlock ? 'block' : 'inline', html })
     } catch {
-      result.push({ type: 'text', html: raw })
+      result.push({ type: 'text-inline', html: raw })
     }
 
     lastIndex = match.index + raw.length
   }
 
   if (lastIndex < props.text.length) {
-    result.push({
-      type: 'text',
-      html: marked.parse(props.text.slice(lastIndex)) as string
-    })
+    result.push(parseText(props.text.slice(lastIndex)))
   }
 
   return result

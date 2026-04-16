@@ -37,4 +37,9 @@ const locale = t.locale;
 const switchLocale = (event) => {
   locale.value = event.target.value;
 };
+
+useSeoMeta({
+  title: 'Finn Hertsch – Portfolio',
+  description: 'Portfolio von Finn Hertsch – Dualer Student in Data Science & KI an der DHBW.',
+})
 </script>

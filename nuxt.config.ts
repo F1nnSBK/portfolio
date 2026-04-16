@@ -6,20 +6,49 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
+      htmlAttrs: { lang: "de" },
       viewport:
         "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",
+      title: "Finn Hertsch – Portfolio",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Portfolio von Finn Hertsch – Dualer Student in Data Science & KI an der DHBW. Projekte, Skills und Kontakt.",
+        },
+        { name: "author", content: "Finn Hertsch" },
+        { property: "og:title", content: "Finn Hertsch – Portfolio" },
+        {
+          property: "og:description",
+          content:
+            "Portfolio von Finn Hertsch – Data Science & KI Student an der DHBW.",
+        },
+        { property: "og:url", content: "https://finn-hertsch.de" },
+        { property: "og:type", content: "website" },
+        { property: "og:locale", content: "de_DE" },
+      ],
       link: [
+        { rel: "canonical", href: "https://finn-hertsch.de" },
         {
           rel: "stylesheet",
           href: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
         },
       ],
-      title: "Finn Hertsch - Portfolio",
-      meta: [
+      script: [
         {
-          name: "description",
-          content:
-            "A Portfolio showcasing my projects, skills, and experience as a dual student in Data Science and AI at DHBW. Explore my work, resume, and contact information.",
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Finn Hertsch",
+            url: "https://finn-hertsch.de",
+            jobTitle: "Dualer Student Data Science & KI",
+            worksFor: { "@type": "Organization", name: "DHBW" },
+            sameAs: [
+              "https://github.com/F1nnSBK",
+              "https://www.linkedin.com/in/finn-hrts/",
+            ],
+          }),
         },
       ],
     },

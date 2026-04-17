@@ -25,6 +25,10 @@
           sind für mich keine Schlagworte, sondern das Fundament jeder Zusammenarbeit. Wenn ein System hakt, analysiere
           ich die Wurzel, nicht die Symptome.
         </p>
+        <div class="flex justify-center mt-8">
+          <img src="https://finn-hertsch.de/images/hg.JPG" alt="Hochgrat"
+            class="w-[95%] h-auto rounded-lg shadow-md object-cover">
+        </div>
       </div>
 
       <div class="md:col-span-1 bg-gray-50 p-8 rounded-lg border-l-4 border-teal-600">

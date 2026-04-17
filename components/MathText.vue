@@ -26,7 +26,6 @@ type Segment =
   | { type: 'inline'; html: string }
   | { type: 'block'; html: string }
 
-// Prüft ob echter Block-Markdown vorhanden ist (Überschriften, Listen, Code-Blöcke…)
 function hasBlockMarkdown(text: string): boolean {
   return /^(#{1,6}\s|[-*+]\s|\d+\.\s|```|~~~|>|\|)/m.test(text)
 }
@@ -35,7 +34,6 @@ function parseText(text: string): Segment {
   if (hasBlockMarkdown(text)) {
     return { type: 'text', html: marked.parse(text) as string }
   }
-  // Einzelne Newlines → <br>, parseInline verhindert <p>-Wrapping
   const withBreaks = text.replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>')
   return { type: 'text-inline', html: marked.parseInline(withBreaks) as string }
 }

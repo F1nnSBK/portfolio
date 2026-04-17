@@ -16,7 +16,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
         <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 flex flex-col items-center text-center">
-          <img src="https://finn-hertsch.de/images/jina.svg" class="w-12 h-12 mb-4" alt="Jina AI" />
+          <img src="https://finn-hertsch.de/images/jina-color.svg" class="w-12 h-12 mb-4" alt="Jina AI" />
           <h3 class="font-medium text-sm uppercase tracking-wider text-gray-500">Embeddings</h3>
           <p class="font-semibold mb-1">Jina AI v4</p>
           <p class="text-xs text-gray-400 mt-2 text-balance">Generierung von 1024-dimensionalen Dense Embeddings.</p>

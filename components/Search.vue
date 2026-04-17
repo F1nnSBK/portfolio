@@ -1,5 +1,5 @@
 <template>
-  <section id="search" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+  <section id="search" class="w-full mx-auto px-4 sm:px-6 py-12 sm:py-16">
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold inline-block mb-8 sm:mb-10">
       {{ $t("search.title", "Wissensdatenbank") }}
     </h2>

@@ -1,8 +1,8 @@
 <template>
-  <div class="max-w-4xl mx-auto p-6">
+  <div class="max-w-5xl mx-auto p-6">
     <Search />
 
-    <div class="mt-12 p-8 bg-white rounded-2xl border border-gray-200 text-gray-900 shadow-sm">
+    <div class="mt-12 p-8 bg-white  border-2 border-black text-gray-900 shadow-sm">
       <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
         Study-RAG Architecture
       </h2>

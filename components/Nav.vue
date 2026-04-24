@@ -8,11 +8,11 @@
 
     <!-- Desktop Nav -->
     <ul class="hidden md:flex gap-6 text-lg">
-      <li>
+      <!-- <li>
         <NuxtLink to="/blog" class="hover:bg-black hover:text-white px-2 py-1 transition-colors">
           Blog
         </NuxtLink>
-      </li>
+      </li> -->
       <li>
         <NuxtLink
           to="/about"
@@ -89,12 +89,12 @@
         v-if="isOpen"
         class="absolute top-16 left-0 w-full bg-white border-b-2 border-black flex flex-col gap-4 px-4 py-6 md:hidden z-50"
       >
-        <li>
+        <!-- <li>
           <NuxtLink to="/blog" class="hover:bg-black hover:text-white px-2 py-1 transition-colors"
             @click="isOpen = false">
             Blog
           </NuxtLink>
-        </li>
+        </li> -->
         <li>
           <NuxtLink
             to="/about"
